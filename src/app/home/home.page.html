@@ -14,7 +14,11 @@
   </ion-header>
 
 <ion-grid class="ion-padding">
-
+  <!-- <ion-row>
+    <ion-col size="12">
+      First row col
+    </ion-col>
+  </ion-row> -->
   <form (ngSubmit)="onCreate()" [formGroup]="newObjectForm">
     <ion-row>
       <ion-col>
@@ -22,22 +26,14 @@
           <ion-label position="stacked"><h2>Name</h2></ion-label>
           <ion-input type="text" placeholder="Grace" formControlName="name"></ion-input>
         </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
+      
         <ion-item class="ion-no-padding" lines="none">
           <ion-label position="stacked"><h2>Height</h2></ion-label>
           <ion-input type="number" placeholder="0" formControlName="height"></ion-input>
         </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
+      
         <ion-button type="submit" expand="block" [disabled]="!newObjectForm.valid">
-          Create WOD
+          Create object
         </ion-button>
       </ion-col>
     </ion-row>
