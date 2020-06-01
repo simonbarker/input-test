@@ -1,20 +1,48 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tabs/wods"></ion-back-button>
+    </ion-buttons>
+    <ion-title>WOD Builder</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content>
+  <ion-header collapse="condense" class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">WOD Builder</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-grid class="ion-padding">
+
+  <form (ngSubmit)="onCreate()" [formGroup]="newObjectForm">
+    <ion-row>
+      <ion-col>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-label position="stacked"><h2>Name</h2></ion-label>
+          <ion-input type="text" placeholder="Grace" formControlName="name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-label position="stacked"><h2>Height</h2></ion-label>
+          <ion-input type="number" placeholder="0" formControlName="height"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block" [disabled]="!newObjectForm.valid">
+          Create WOD
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-grid>
+
+
 </ion-content>
